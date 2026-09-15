@@ -1,6 +1,13 @@
-# JARVIS local workspace
+# JARVIS Sphere
 
-A personal assistant with a Tony Stark-inspired HUD, Hermes chat, browser dictation and speech output, webcam hand controls, local notes, and a focus timer. This is a separate app inside the trading checkout. It contains no face identification or surveillance pipeline.
+A local personal assistant with an original particle-sphere interface, Hermes chat, speech wake, Voicebox support, live source-linked briefings, and two-hand sphere controls. This is a separate app inside the trading checkout. It contains no face identification or surveillance pipeline.
+
+## What it does
+
+- Select any visible sphere particle to open a current briefing from World, China, engineering, aircraft, or market feeds. Each panel shows the publisher, source time, refresh time, and original link.
+- Say “Jarvis, wake up” or clap twice after starting voice control. JARVIS responds in the browser voice or an optional local Voicebox profile.
+- Use one pinched hand to rotate the sphere and two hands to zoom it. Camera inference stays in the browser.
+- Use the Computer console to open a website or local app, download a file to Downloads, find files under the current user's home folder, or run an explicit command. Every action has an exact review-and-confirm screen. Commands run without a shell.
 
 ## Run
 
@@ -13,6 +20,8 @@ npm start
 ```
 
 Open http://127.0.0.1:4317. Node.js 22+ and a current Chromium browser are recommended. Setup downloads pinned MediaPipe assets; the interface and hand model are then served locally. The Python bridge defaults to `C:\Hermes\hermes-agent\venv\Scripts\python.exe` and reads the existing `C:\Hermes\config.yaml` and `.env`. Override `JARVIS_PYTHON`, `HERMES_HOME`, or `JARVIS_PORT` in the process environment if needed. No credentials go into browser code.
+
+To install it as an app after it is running, open the address in Chrome or Edge and choose **Install JARVIS** from the browser menu. The local server and Hermes remain required because they provide the AI bridge and local computer-action boundary.
 
 Chat needs the existing configured AI provider to be available. The local UI does not imply offline model inference. Capacity errors and timeouts produce a retryable failure. The bridge has no enabled tools, skips workspace instructions and memory, and disables Hermes plugins through safe mode. It is a conversational assistant, not an unrestricted operating-system agent.
 
