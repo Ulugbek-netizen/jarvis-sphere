@@ -4,3 +4,5 @@ public/models/
 .runtime/
 __pycache__/
 .playwright-cli/
+
+.vercel
